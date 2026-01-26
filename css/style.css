@@ -9,10 +9,10 @@
     --bg-color: #ffffff;
     --light-bg: #f9f9f9;
     --border-color: #e0e0e0;
-    
+
     --font-heading: 'Philosopher', serif;
     --font-body: 'Source Sans 3', sans-serif;
-    
+
     --max-width: 1000px;
     --header-height: 80px;
 }
@@ -25,7 +25,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -91,7 +96,7 @@ main {
     width: 100%;
     height: var(--header-height);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,9 +182,10 @@ main {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 50%; /* Circle shape as requested style typically implies personal formal */
+    border-radius: 50%;
+    /* Circle shape as requested style typically implies personal formal */
     border: 4px solid #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text {
@@ -247,7 +253,8 @@ main {
 .career-item::before {
     content: '';
     position: absolute;
-    left: -37px; /* Align dot with line */
+    left: -37px;
+    /* Align dot with line */
     top: 6px;
     width: 12px;
     height: 12px;
@@ -279,7 +286,8 @@ main {
 
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Side by side info and map */
+    grid-template-columns: 1fr 1fr;
+    /* Side by side info and map */
     gap: 40px;
     align-items: start;
 }
@@ -323,7 +331,7 @@ main {
 }
 
 .map-container iframe {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 
@@ -356,7 +364,8 @@ main {
     }
 
     .main-nav ul {
-        display: none; /* Hide for mobile initially, would need JS to toggle */
+        display: none;
+        /* Hide for mobile initially, would need JS to toggle */
         flex-direction: column;
         position: absolute;
         top: var(--header-height);
@@ -364,10 +373,10 @@ main {
         width: 100%;
         background-color: #fff;
         padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
-    
+
     .main-nav.open ul {
         display: flex;
     }
@@ -377,12 +386,104 @@ main {
         text-align: center;
         gap: 30px;
     }
-    
+
     .info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .main-title {
         font-size: 2.2rem;
     }
+}
+
+/* ==========================================================================
+   Portfolio Section
+   ========================================================================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.portfolio-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-image-link {
+    display: block;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 200px;
+    /* or auto, but fixed height helps alignment */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+    transform: scale(1.05);
+}
+
+.portfolio-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.portfolio-title a {
+    color: var(--primary-color);
+}
+
+.portfolio-title a:hover {
+    color: var(--accent-color);
+}
+
+.portfolio-date {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.portfolio-desc {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    /* Pushes button down if we had one */
+}
+
+/* Optional: Add a "View Project" link/button style if desired */
+.portfolio-link-btn {
+    display: inline-block;
+    margin-top: auto;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.portfolio-link-btn:hover {
+    text-decoration: underline;
 }
