@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://harupen26.github.io/MYHP/sitemap.xml
