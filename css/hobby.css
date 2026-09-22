@@ -73,8 +73,8 @@
     font-size: 0.95rem;
     color: var(--secondary-color);
 }
-.hobby-page .hobby-video figcaption a {
-    display: inline-block;
+.hobby-page .hobby-video .color-guard-performers {
+    margin: 0;
     padding: 4px 0;
 }
 .hobby-page a:focus-visible {
