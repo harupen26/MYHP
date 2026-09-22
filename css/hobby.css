@@ -1,0 +1,92 @@
+/* Color Guard and Performance Credits — Hobby page only. */
+.hobby-page .hobby-eyebrow {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.hobby-page .hobby-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+.hobby-page .hobby-video { margin: 0; min-width: 0; }
+.hobby-page .hobby-video-frame {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #16232e;
+}
+.hobby-page .hobby-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.hobby-page .hobby-video figcaption {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+.hobby-page .hobby-video figcaption a {
+    display: inline-block;
+    padding: 4px 0;
+}
+.hobby-page a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 5px;
+    border-radius: 2px;
+}
+.hobby-page .hobby-video figcaption a:hover,
+.hobby-page .credit-title a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.hobby-page .performance-credits {
+    background: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+}
+.hobby-page .credit-group {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 40px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-color);
+}
+.hobby-page .credit-category {
+    font-size: 1.35rem;
+    line-height: 1.4;
+    margin: 0;
+}
+.hobby-page .credit-list { min-width: 0; }
+.hobby-page .credit-item + .credit-item { margin-top: 28px; }
+.hobby-page .credit-title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+.hobby-page .credit-arrow {
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 0.9em;
+}
+.hobby-page .credit-meta {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .hobby-page .hobby-video-grid { grid-template-columns: 1fr; gap: 26px; }
+    .hobby-page .credit-group { grid-template-columns: 1fr; gap: 18px; padding: 26px 0; }
+    .hobby-page .section { padding: 44px 0; }
+    .hobby-page .section-title { font-size: 1.9rem; margin-bottom: 34px; }
+}
