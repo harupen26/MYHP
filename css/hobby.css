@@ -90,3 +90,17 @@
     .hobby-page .section { padding: 44px 0; }
     .hobby-page .section-title { font-size: 1.9rem; margin-bottom: 34px; }
 }
+
+/* Embedded credits and a separate YOKOHAMA ROBINS section. */
+.hobby-page .credit-video-frame { margin-top: 16px; }
+.hobby-page .robins-section { border-top: 1px solid var(--border-color); }
+.hobby-page .robins-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 28px;
+}
+.hobby-page .robins-video-grid .credit-item { min-width: 0; }
+.hobby-page .robins-video-grid .credit-item + .credit-item { margin-top: 0; }
+@media (max-width: 768px) {
+    .hobby-page .robins-video-grid { grid-template-columns: 1fr; gap: 32px; }
+}
