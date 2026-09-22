@@ -7,10 +7,50 @@
     text-transform: uppercase;
     margin-bottom: 10px;
 }
-.hobby-page .hobby-video-grid {
+.hobby-page .hobby-video-carousel {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 28px) / 2);
     gap: 28px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding: 4px 0 18px;
+}
+.hobby-page .hobby-video-carousel .hobby-video { scroll-snap-align: start; }
+.hobby-page .color-guard-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+.hobby-page .video-scroll-button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.hobby-page .video-scroll-button:hover:not(:disabled) {
+    background: var(--light-bg);
+    border-color: var(--primary-color);
+}
+.hobby-page .video-scroll-button:disabled { opacity: 0.35; cursor: default; }
+.hobby-page .video-scroll-button:focus-visible,
+.hobby-page .hobby-video-carousel:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+.hobby-page .color-guard-video-title {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    margin: 0 0 4px;
 }
 .hobby-page .hobby-video { margin: 0; min-width: 0; }
 .hobby-page .hobby-video-frame {
@@ -85,7 +125,7 @@
     line-height: 1.6;
 }
 @media (max-width: 768px) {
-    .hobby-page .hobby-video-grid { grid-template-columns: 1fr; gap: 26px; }
+    .hobby-page .hobby-video-carousel { grid-auto-columns: 86%; gap: 18px; }
     .hobby-page .credit-group { grid-template-columns: 1fr; gap: 18px; padding: 26px 0; }
     .hobby-page .section { padding: 44px 0; }
     .hobby-page .section-title { font-size: 1.9rem; margin-bottom: 34px; }
@@ -96,8 +136,10 @@
 .hobby-page .robins-section { border-top: 1px solid var(--border-color); }
 .hobby-page .robins-video-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px 28px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 .hobby-page .robins-video-grid .credit-item { min-width: 0; }
 .hobby-page .robins-video-grid .credit-item + .credit-item { margin-top: 0; }
