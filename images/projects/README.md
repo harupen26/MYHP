@@ -16,5 +16,8 @@ Current image files:
 - `knitted-acoustic-barcode.jpg`
 - `stitch-barcode.jpg`
 - `barcord.jpg`
+- `knitted-encoding.jpg`
+- `stitch-encoding.jpg`
+- `barcord-encoding.jpg`
 
 When replacing Fabric Classification, update its image path in `portfolio.html` and `projects/fabric-classification.html`.
