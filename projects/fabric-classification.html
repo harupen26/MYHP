@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabric Classification - Haruki L. Yasui</title>
+    <meta name="description" content="Acoustic fabric classification research project by Haruki Luke Yasui">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Source+Sans+3:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="project-detail-page">
+    <div class="wrapper">
+        <header class="page-header">
+            <div class="logo-container"><a href="../index.html" class="logo-text">HLY</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">HOME</a></li><li><a href="../publications.html">PUBLICATIONS</a></li>
+                    <li><a href="../portfolio.html" class="active">PORTFOLIO</a></li><li><a href="../aboutme.html">ABOUT ME</a></li><li><a href="../hobby.html">HOBBY</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            </nav>
+        </header>
+        <main>
+            <article class="project-detail">
+                <div class="container">
+                    <a class="project-back-link" href="../portfolio.html">← Back to Portfolio</a>
+                    <p class="project-kicker">Research Project · Acoustic Sensing</p>
+                    <h1 class="project-heading">Fabric Classification</h1>
+                    <p class="project-summary">布から得られる音響信号を解析し、波形と周波数領域の特徴量から素材の違いを識別するプロトタイプです。</p>
+                    <ul class="project-tags"><li>Machine Learning</li><li>Acoustic Sensing</li><li>Signal Processing</li><li>Textile</li></ul>
+                    <img class="project-hero-image" src="../images/projects/fabric-classification.svg" alt="Acoustic waveform over a woven fabric pattern">
+
+                    <div class="project-detail-grid">
+                        <div class="project-body">
+                            <section>
+                                <h2>Overview</h2>
+                                <p>圧電センサーで布の音響応答を取得し、LM358を使った回路で信号を調整してPCへ送ります。Line Length法でスクラッチ区間を検出し、取得した波形とPSDの特徴量から5種類の布を分類します。</p>
+                            </section>
+                            <section>
+                                <h2>Classification Target</h2>
+                                <p>このプロジェクトでは0と1を埋め込むのではなく、既存の布が持つ音響的な違いをクラスとして扱います。</p>
+                            </section>
+                            <section>
+                                <h2>Classification Pipeline</h2>
+                                <ol>
+                                    <li>布から音響応答を発生させ、圧電センサーで検出する。</li>
+                                    <li>LM358と100 kΩ可変抵抗を用いた回路で信号とゲインを調整する。</li>
+                                    <li>USB経由で波形をコンピュータへ取り込む。</li>
+                                    <li>Line Length法でイベントを検出し、波形・PSD特徴量を抽出する。</li>
+                                    <li>300サンプルで分類器を学習し、100サンプルで評価する。</li>
+                                </ol>
+                            </section>
+                        </div>
+                        <aside class="project-sidebar">
+                            <h2>Project Details</h2>
+                            <dl class="project-facts">
+                                <div><dt>Methods</dt><dd>Line Length detection, waveform and PSD features, classification</dd></div>
+                                <div><dt>Hardware</dt><dd>Piezo contact microphone, LM358 circuit, USB audio interface</dd></div>
+                                <div><dt>Result</dt><dd>67% overall accuracy across five fabric classes</dd></div>
+                                <div><dt>Skills</dt><dd>Acoustic sensing, circuit design, machine learning</dd></div>
+                            </dl>
+                        </aside>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer class="page-footer"><div class="container"><p class="copyright">&copy; 2026 HARUKI L. YASUI ALL RIGHTS RESERVED</p></div></footer>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

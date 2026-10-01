@@ -3,42 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CKXXJ45BVE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CKXXJ45BVE');
     </script>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio - Haruki L. Yasui</title>
-    <meta name="description" content="Portfolio of Haruki Luke Yasui">
-
-    <!-- Reset CSS -->
+    <meta name="description" content="Research and development projects by Haruki Luke Yasui">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="portfolio-page">
     <div class="wrapper">
         <header class="page-header">
-            <div class="logo-container">
-                <a href="index.html" class="logo-text">HLY</a>
-            </div>
-
+            <div class="logo-container"><a href="index.html" class="logo-text">HLY</a></div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
@@ -48,43 +35,100 @@
                     <li><a href="hobby.html">HOBBY</a></li>
                 </ul>
                 <button class="menu-toggle" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </button>
             </nav>
         </header>
 
         <main>
-            <section class="section">
+            <section class="section portfolio-section">
                 <div class="container">
-                    <h2 class="section-title">Portfolio</h2>
+                    <h1 class="section-title">Portfolio</h1>
+                    <p class="portfolio-intro">Research prototypes and digital tools exploring textiles, sensing, fabrication, and interaction.</p>
+
                     <div class="portfolio-grid">
                         <article class="portfolio-card">
-                            <a href="https://solidify-ioji.onrender.com/" target="_blank" rel="noopener noreferrer"
-                                class="portfolio-image-link">
-                                <img src="images/solidify_preview.png" alt="Solidify Preview" class="portfolio-image">
+                            <a class="portfolio-card-link" href="https://solidify-ioji.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Solidify web application in a new tab">
+                                <img src="images/solidify_preview.png" alt="Solidify web application preview" class="portfolio-image">
+                                <div class="portfolio-content">
+                                    <p class="portfolio-type">Web Application</p>
+                                    <h2 class="portfolio-title">Solidify</h2>
+                                    <p class="portfolio-desc">A web application that generates and previews 3D models from 2D images, then exports them as STL or OBJ files.</p>
+                                    <ul class="portfolio-tags" aria-label="Project topics">
+                                        <li>3D</li><li>Web App</li><li>Digital Fabrication</li>
+                                    </ul>
+                                    <span class="portfolio-link-btn">Open Website <span aria-hidden="true">↗</span></span>
+                                </div>
                             </a>
-                            <div class="portfolio-content">
-                                <h3 class="portfolio-title">
-                                    <a href="https://solidify-ioji.onrender.com/" target="_blank"
-                                        rel="noopener noreferrer">Solidify</a>
-                                </h3>
-                                <time class="portfolio-date">2026/01/26</time>
-                                <p class="portfolio-desc">
-                                    2D画像をアップロードするだけで、瞬時に3Dモデルを生成・プレビューし、STLやOBJ形式でダウンロードできるWebアプリケーションです。直感的な操作で、3DプリントやCG制作のための立体データを手軽に作成いただけます。
-                                </p>
-                            </div>
                         </article>
+
+                        <article class="portfolio-card">
+                            <a class="portfolio-card-link" href="projects/fabric-classification.html" aria-label="View Fabric Classification project">
+                                <img src="images/projects/fabric-classification.svg" alt="Acoustic waveform over a woven fabric pattern" class="portfolio-image">
+                                <div class="portfolio-content">
+                                    <p class="portfolio-type">Research Project</p>
+                                    <h2 class="portfolio-title">Fabric Classification</h2>
+                                    <p class="portfolio-desc">An acoustic-only fabric recognition prototype that classifies materials from vibrations produced by a simple swiping probe.</p>
+                                    <ul class="portfolio-tags" aria-label="Project topics">
+                                        <li>Machine Learning</li><li>Acoustic Sensing</li><li>Textile</li>
+                                    </ul>
+                                    <span class="portfolio-link-btn">View Project <span aria-hidden="true">→</span></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <a class="portfolio-card-link" href="projects/knitted-acoustic-barcode.html" aria-label="View Knitted Acoustic Barcode project">
+                                <img src="images/projects/knitted-acoustic-barcode.svg" alt="Raised knitted barcode pattern with an acoustic waveform" class="portfolio-image">
+                                <div class="portfolio-content">
+                                    <p class="portfolio-type">Research Project</p>
+                                    <h2 class="portfolio-title">Knitted Acoustic Barcode</h2>
+                                    <p class="portfolio-desc">A knitted barcode that embeds binary data in the spacing of raised garter regions and reads it with a contact microphone.</p>
+                                    <ul class="portfolio-tags" aria-label="Project topics">
+                                        <li>Machine Knitting</li><li>Acoustic Sensing</li><li>K-means</li>
+                                    </ul>
+                                    <span class="portfolio-link-btn">View Project <span aria-hidden="true">→</span></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <a class="portfolio-card-link" href="projects/stitch-barcode.html" aria-label="View Stitch Barcode project">
+                                <img src="images/projects/stitch-barcode.svg" alt="A stitched path made from different stitch lengths" class="portfolio-image">
+                                <div class="portfolio-content">
+                                    <p class="portfolio-type">Research Project</p>
+                                    <h2 class="portfolio-title">Stitch Barcode</h2>
+                                    <p class="portfolio-desc">An embroidery method that hides data in stitch lengths and markers, then reconstructs it through image processing.</p>
+                                    <ul class="portfolio-tags" aria-label="Project topics">
+                                        <li>Embroidery</li><li>Computer Vision</li><li>SVG</li>
+                                    </ul>
+                                    <span class="portfolio-link-btn">View Project <span aria-hidden="true">→</span></span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="portfolio-card">
+                            <a class="portfolio-card-link" href="projects/barcord.html" aria-label="View BarCord project">
+                                <img src="images/projects/barcord.svg" alt="A two-color braided cord carrying a binary pattern" class="portfolio-image">
+                                <div class="portfolio-content">
+                                    <p class="portfolio-type">Research Project</p>
+                                    <h2 class="portfolio-title">BarCord</h2>
+                                    <p class="portfolio-desc">A braided-cord code that stores information through changes in color pattern and structural segment length.</p>
+                                    <ul class="portfolio-tags" aria-label="Project topics">
+                                        <li>Braiding</li><li>Physical Encoding</li><li>Textile</li>
+                                    </ul>
+                                    <span class="portfolio-link-btn">View Project <span aria-hidden="true">→</span></span>
+                                </div>
+                            </a>
+                        </article>
+
                     </div>
                 </div>
             </section>
         </main>
 
         <footer class="page-footer">
-            <div class="container">
-                <p class="copyright">&copy; 2026 HARUKI L. YASUI ALL RIGHTS RESERVED</p>
-            </div>
+            <div class="container"><p class="copyright">&copy; 2026 HARUKI L. YASUI ALL RIGHTS RESERVED</p></div>
         </footer>
     </div>
     <script src="js/script.js"></script>

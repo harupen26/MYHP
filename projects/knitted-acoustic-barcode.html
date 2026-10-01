@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knitted Acoustic Barcode - Haruki L. Yasui</title>
+    <meta name="description" content="Knitted Acoustic Barcode research project by Haruki Luke Yasui">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Source+Sans+3:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="project-detail-page">
+    <div class="wrapper">
+        <header class="page-header">
+            <div class="logo-container"><a href="../index.html" class="logo-text">HLY</a></div>
+            <nav class="main-nav">
+                <ul><li><a href="../index.html">HOME</a></li><li><a href="../publications.html">PUBLICATIONS</a></li><li><a href="../portfolio.html" class="active">PORTFOLIO</a></li><li><a href="../aboutme.html">ABOUT ME</a></li><li><a href="../hobby.html">HOBBY</a></li></ul>
+                <button class="menu-toggle" aria-label="Toggle navigation"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+            </nav>
+        </header>
+        <main>
+            <article class="project-detail">
+                <div class="container">
+                    <a class="project-back-link" href="../portfolio.html">← Back to Portfolio</a>
+                    <p class="project-kicker">Research Project · Machine Knitting</p>
+                    <h1 class="project-heading">Knitted Acoustic Barcode</h1>
+                    <p class="project-summary">ガーター編みの凹凸間隔にバイナリデータを埋め込み、布をなぞったときの音響波形から情報を復号するバーコードです。</p>
+                    <ul class="project-tags"><li>Machine Knitting</li><li>Acoustic Sensing</li><li>Signal Processing</li><li>K-means</li></ul>
+                    <img class="project-hero-image" src="../images/projects/knitted-acoustic-barcode.svg" alt="Raised knitted barcode pattern with an acoustic waveform">
+                    <div class="project-detail-grid">
+                        <div class="project-body">
+                            <section><h2>Physical Representation</h2><p>隆起部分の間隔を変えることで0と1を表します。前床2列を固定し、後床領域の列数を変化させます。</p>
+                                <table class="project-mapping"><thead><tr><th>Bit</th><th>Structure</th><th>Interval</th></tr></thead><tbody><tr><td>0</td><td>2 front-bed + 2 back-bed rows</td><td>Short</td></tr><tr><td>1</td><td>2 front-bed + 3 back-bed rows</td><td>Long</td></tr></tbody></table>
+                            </section>
+                            <section><h2>Encoding</h2><ol><li>データをバイナリ列に変換する。</li><li>各ビットを短い／長いガーター間隔へ変換する。</li><li>カスタムスクリプトでパターン画像を生成する。</li><li><code>image-kp.js</code>で編み機用命令へ変換し、工業用編み機で出力する。</li></ol></section>
+                            <section><h2>Decoding</h2><ol><li>コンタクトマイクを付けたプローブで布をなぞり、USBオーディオインターフェースで録音する。</li><li>50–500 Hzのバンドパス処理と絶対値化を行う。</li><li>ピークとピーク間隔を検出する。</li><li>K-meansで短い／長い間隔を分類し、0と1へ戻す。</li></ol></section>
+                        </div>
+                        <aside class="project-sidebar"><h2>Project Details</h2><dl class="project-facts"><div><dt>Machine</dt><dd>Shima Seiki SWG091N2, 15 gauge</dd></div><div><dt>Material</dt><dd>Tamm Petit acrylic yarn</dd></div><div><dt>Density</dt><dd>2.42 bits/cm (32-bit sample)</dd></div><div><dt>Main Challenge</dt><dd>Sliding-speed variation changes peak intervals.</dd></div></dl></aside>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer class="page-footer"><div class="container"><p class="copyright">&copy; 2026 HARUKI L. YASUI ALL RIGHTS RESERVED</p></div></footer>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>
