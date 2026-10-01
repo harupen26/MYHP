@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
                     <a class="project-back-link" href="../portfolio.html">← Back to Portfolio</a>
                     <p class="project-kicker">Research Project · Acoustic Sensing</p>
                     <h1 class="project-heading">Fabric Classification</h1>
-                    <p class="project-summary">布から得られる音響信号を解析し、波形と周波数領域の特徴量から素材の違いを識別するプロトタイプです。</p>
+                    <p class="project-summary">A prototype that analyzes acoustic signals from fabric and identifies material differences using waveform- and frequency-domain features.</p>
                     <ul class="project-tags"><li>Machine Learning</li><li>Acoustic Sensing</li><li>Signal Processing</li><li>Textile</li></ul>
                     <img class="project-hero-image" src="../images/projects/fabric-classification.svg" alt="Acoustic waveform over a woven fabric pattern">
 
@@ -37,20 +37,20 @@
                         <div class="project-body">
                             <section>
                                 <h2>Overview</h2>
-                                <p>圧電センサーで布の音響応答を取得し、LM358を使った回路で信号を調整してPCへ送ります。Line Length法でスクラッチ区間を検出し、取得した波形とPSDの特徴量から5種類の布を分類します。</p>
+                                <p>A piezoelectric sensor captures each fabric's acoustic response. An LM358-based circuit conditions the signal before it is sent to a computer. Scratch events are detected with the Line Length method, and five fabric types are classified using waveform and power spectral density features.</p>
                             </section>
                             <section>
                                 <h2>Classification Target</h2>
-                                <p>このプロジェクトでは0と1を埋め込むのではなく、既存の布が持つ音響的な違いをクラスとして扱います。</p>
+                                <p>Rather than embedding zeros and ones, this project treats the naturally occurring acoustic differences between existing fabrics as classification targets.</p>
                             </section>
                             <section>
                                 <h2>Classification Pipeline</h2>
                                 <ol>
-                                    <li>布から音響応答を発生させ、圧電センサーで検出する。</li>
-                                    <li>LM358と100 kΩ可変抵抗を用いた回路で信号とゲインを調整する。</li>
-                                    <li>USB経由で波形をコンピュータへ取り込む。</li>
-                                    <li>Line Length法でイベントを検出し、波形・PSD特徴量を抽出する。</li>
-                                    <li>300サンプルで分類器を学習し、100サンプルで評価する。</li>
+                                    <li>Generate an acoustic response by swiping the fabric and detect it with a piezoelectric sensor.</li>
+                                    <li>Condition the signal and adjust its gain with an LM358 circuit and a 100 kΩ potentiometer.</li>
+                                    <li>Transfer the waveform to a computer through a USB audio interface.</li>
+                                    <li>Detect scratch events with the Line Length method and extract waveform and PSD features.</li>
+                                    <li>Train the classifier on 300 samples and evaluate it on 100 test samples.</li>
                                 </ol>
                             </section>
                         </div>

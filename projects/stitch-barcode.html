@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,14 +25,14 @@
                     <a class="project-back-link" href="../portfolio.html">← Back to Portfolio</a>
                     <p class="project-kicker">Research Project · Embroidery</p>
                     <h1 class="project-heading">Stitch Barcode</h1>
-                    <p class="project-summary">任意の一本線SVGを異なる長さのステッチで再サンプリングし、刺繍された線の中にバイナリ情報と経路情報を埋め込む手法です。</p>
+                    <p class="project-summary">A method that resamples any single-line SVG with different stitch lengths, embedding binary data and path information directly into an embroidered line.</p>
                     <ul class="project-tags"><li>Embroidery</li><li>Computer Vision</li><li>SVG</li><li>K-means</li></ul>
                     <img class="project-hero-image" src="../images/projects/stitch-barcode.svg" alt="A stitched path made from different stitch lengths">
                     <div class="project-detail-grid">
                         <div class="project-body">
-                            <section><h2>Physical Representation</h2><table class="project-mapping"><thead><tr><th>Symbol</th><th>Stitch length</th><th>Role</th></tr></thead><tbody><tr><td>0</td><td>1.2 mm</td><td>Binary data</td></tr><tr><td>1</td><td>2.4 mm</td><td>Binary data</td></tr><tr><td>M</td><td>4.5–7.2 mm</td><td>Marker</td></tr></tbody></table><p>開始マーカー <code>0-M-1</code> が読み取り方向を示し、交差部ではcross-skipパターンが経路を定義します。</p></section>
-                            <section><h2>Encoding</h2><ol><li>情報をバイナリ列に変換する。</li><li>一本線SVGをビットに対応するステッチ長で再サンプリングする。</li><li>開始マーカーと交差部のcross-skipを挿入する。</li><li>Singer Quantum Futura CE-200で刺繍する。</li></ol></section>
-                            <section><h2>Decoding</h2><ol><li>刺繍画像をHSV色空間でセグメンテーションする。</li><li>各ステッチの長さを測定し、K-meansと閾値処理で0・1・マーカーを分類する。</li><li>端点間の接続、開始マーカー、cross-skipを使って読み取り順を復元する。</li><li>ステッチ列をバイナリデータへ戻す。</li></ol></section>
+                            <section><h2>Physical Representation</h2><table class="project-mapping"><thead><tr><th>Symbol</th><th>Stitch length</th><th>Role</th></tr></thead><tbody><tr><td>0</td><td>1.2 mm</td><td>Binary data</td></tr><tr><td>1</td><td>2.4 mm</td><td>Binary data</td></tr><tr><td>M</td><td>4.5–7.2 mm</td><td>Marker</td></tr></tbody></table><p>The <code>0-M-1</code> start marker establishes the reading direction, while cross-skip patterns define the intended route through path crossings.</p></section>
+                            <section><h2>Encoding</h2><ol><li>Convert the source information into a binary sequence.</li><li>Resample a single-line SVG using the stitch length assigned to each bit.</li><li>Insert a start marker and cross-skip patterns at path crossings.</li><li>Fabricate the encoded path with a Singer Quantum Futura CE-200 embroidery machine.</li></ol></section>
+                            <section><h2>Decoding</h2><ol><li>Segment the embroidery image in HSV color space.</li><li>Measure each stitch and use K-means with thresholding to classify zeros, ones, and markers.</li><li>Reconstruct the reading order using endpoint connections, the start marker, and cross-skip patterns.</li><li>Convert the ordered stitch sequence back into binary data.</li></ol></section>
                         </div>
                         <aside class="project-sidebar"><h2>Project Details</h2><dl class="project-facts"><div><dt>Machine</dt><dd>Singer Quantum Futura CE-200</dd></div><div><dt>Methods</dt><dd>HSV segmentation, geometry analysis, K-means</dd></div><div><dt>Density</dt><dd>4.64 bits/cm (32-bit sample)</dd></div><div><dt>Main Challenge</dt><dd>Thread tension changes stitch geometry.</dd></div></dl></aside>
                     </div>
