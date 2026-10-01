@@ -19,4 +19,5 @@ https://harupen26.github.io/MYHP/ (GitHub Pages, main ブランチから自動�
 - **経歴 (トップページ)**: `index.html` の Career & Milestones の `<li class="career-item">` を追加・編集。
   CV を更新したら、対応する項目をこちらにも反映するのを忘れずに
 - **プロフィール写真**: 正方形にトリミングした画像を 800×800 に縮小して `images/profile.jpg` に上書き
+- **Portfolio**: `portfolio.html` の `.portfolio-grid` の先頭に新しいカードを追加。新しいプロジェクトほど左上に表示する
 - push すれば GitHub Pages が数分で自動反映
