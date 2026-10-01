@@ -1,6 +1,6 @@
 # Project image specification
 
-Replace the four SVG files in this folder with exported project images when final photography is ready.
+Project images use the same 16:9 crop for the portfolio card and project-detail hero. Knitted Acoustic Barcode, Stitch Barcode, and BarCord currently use final JPEG artwork; Fabric Classification still uses a temporary SVG illustration.
 
 - Figma frame: **1600 x 900 px** (16:9)
 - Export: WebP preferred, JPEG acceptable
@@ -10,11 +10,11 @@ Replace the four SVG files in this folder with exported project images when fina
 - Avoid embedding titles in the image; the page supplies accessible text and headings
 - Use the same crop for the portfolio card and project-detail hero
 
-Suggested final filenames:
+Current image files:
 
-- `fabric-classification.webp`
-- `knitted-acoustic-barcode.webp`
-- `stitch-barcode.webp`
-- `barcord.webp`
+- `fabric-classification.svg` (temporary)
+- `knitted-acoustic-barcode.jpg`
+- `stitch-barcode.jpg`
+- `barcord.jpg`
 
-After exporting, update the corresponding image paths in `portfolio.html` and the four files in `projects/`.
+When replacing Fabric Classification, update its image path in `portfolio.html` and `projects/fabric-classification.html`.
