@@ -705,7 +705,7 @@ main {
     align-items: start;
     display: grid;
     gap: clamp(28px, 5vw, 56px);
-    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 24px;
 }
 
