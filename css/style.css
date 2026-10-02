@@ -615,8 +615,8 @@ main {
 
 .project-detail-grid {
     display: grid;
-    gap: 56px;
-    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 40px;
+    grid-template-columns: 1fr;
     margin-top: 60px;
 }
 
@@ -656,18 +656,14 @@ main {
 }
 
 .project-sidebar {
-    align-self: start;
-    background: var(--light-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 24px;
-    position: sticky;
-    top: calc(var(--header-height) + 24px);
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
 }
 
 .project-facts {
     display: grid;
-    gap: 18px;
+    gap: 28px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .project-facts dt {
@@ -699,23 +695,11 @@ main {
     color: var(--primary-color);
 }
 
-.project-method-row {
-    align-items: start;
-    display: grid;
-    gap: 26px;
-    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-}
-
-.project-method-image {
-    background: var(--light-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+.project-representation-image {
+    border-radius: 0;
     display: block;
+    margin-top: 30px;
     width: 100%;
-}
-
-.project-method-copy ol {
-    margin-top: 0;
 }
 
 .project-resource {
@@ -744,12 +728,15 @@ main {
     .portfolio-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .project-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 720px) {
     .portfolio-grid,
-    .project-detail-grid,
-    .project-method-row {
+    .project-detail-grid {
         grid-template-columns: 1fr;
     }
 
@@ -763,6 +750,10 @@ main {
 
     .project-sidebar {
         position: static;
+    }
+
+    .project-facts {
+        grid-template-columns: 1fr;
     }
 }
 
