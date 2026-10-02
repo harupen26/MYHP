@@ -37,27 +37,27 @@
                         <div class="project-body">
                             <section>
                                 <h2>Overview</h2>
-                                <p>A piezoelectric sensor captures each fabric's acoustic response. An LM358-based circuit conditions the signal before it is sent to a computer. Scratch events are detected with the Line Length method, and five fabric types are classified using waveform and power spectral density features.</p>
+                                <p>Rather than embedding 0 and 1, this project identifies naturally occurring acoustic differences between fabrics. A piezoelectric contact microphone records each swipe, and the software detects the scratch event before classifying its material.</p>
                             </section>
                             <section>
-                                <h2>Classification Target</h2>
-                                <p>Rather than embedding 0 and 1, this project treats the naturally occurring acoustic differences between existing fabrics as classification targets.</p>
+                                <h2>Implementation Workflow</h2>
+                                <div class="project-workflow" aria-label="Fabric Classification implementation workflow">
+                                    <div class="workflow-step"><span class="workflow-label">01 · Capture</span><h3>Fabric vibration to USB audio</h3><p>A swipe travels through a piezo sensor, an LM358 conditioning circuit with adjustable gain, and a USB audio interface to the computer as a 48 kHz raw waveform.</p></div>
+                                    <div class="workflow-step"><span class="workflow-label">02 · Detect</span><h3>Find each scratch with Line Length</h3><p>For every 5 ms window, the system sums the absolute difference between adjacent samples. A calibrated baseline sets the threshold; three consecutive abnormal windows start an event and three normal windows end it. Very short activity is rejected, then a fixed raw window is centered on the event midpoint.</p></div>
+                                    <div class="workflow-step"><span class="workflow-label">03 · Describe</span><h3>Extract 15 acoustic features</h3><p>Five time-domain descriptors capture level and envelope shape, six log-power bands summarize 100–9,000 Hz energy with Welch PSD, and four spectral-shape descriptors measure centroid, bandwidth, flatness, and 85% rolloff.</p></div>
+                                    <div class="workflow-step"><span class="workflow-label">04 · Classify</span><h3>Run the same pipeline in real time</h3><p>The feature vector is standardized and classified by an RBF SVM, evaluated with stratified five-fold cross-validation. The real-time classifier applies the identical feature extractor directly to each detected raw event.</p></div>
+                                </div>
                             </section>
                             <section>
-                                <h2>Classification Pipeline</h2>
-                                <ol>
-                                    <li>Generate an acoustic response by swiping the fabric and detect it with a piezoelectric sensor.</li>
-                                    <li>Condition the signal and adjust its gain with an LM358 circuit and a 100 kΩ potentiometer.</li>
-                                    <li>Transfer the waveform to a computer through a USB audio interface.</li>
-                                    <li>Detect scratch events with the Line Length method and extract waveform and PSD features.</li>
-                                    <li>Train the classifier on 300 samples and evaluate it on 100 test samples.</li>
-                                </ol>
+                                <h2>Application: Fabric Game Controller</h2>
+                                <p>The recognized fabric label can be mapped to an application command. In the current proof of concept, detecting the black fabric sends one Space keypress, turning a fabric swipe into the jump control for Chrome Dino.</p>
+                                <div class="project-video-placeholder" role="img" aria-label="Placeholder for a future Fabric Game Controller demonstration video"><span>Demo video</span><p>Gameplay demonstration will be added here.</p></div>
                             </section>
                         </div>
                         <aside class="project-sidebar">
                             <h2>Project Details</h2>
                             <dl class="project-facts">
-                                <div><dt>Methods</dt><dd>Line Length detection, waveform and PSD features, classification</dd></div>
+                                <div><dt>Methods</dt><dd>Line Length detection, 15 time/frequency features, RBF SVM</dd></div>
                                 <div><dt>Hardware</dt><dd>Piezo contact microphone, LM358 circuit, USB audio interface</dd></div>
                                 <div><dt>Result</dt><dd>67% overall accuracy across five fabric classes</dd></div>
                                 <div><dt>Skills</dt><dd>Python, acoustic sensing, circuit design, machine learning</dd></div>
