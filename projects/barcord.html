@@ -30,7 +30,16 @@
                     <img class="project-hero-image" src="../images/projects/barcord.jpg" alt="BarCord prototypes showing encoded color patterns in green and purple braided cord">
                     <div class="project-detail-grid">
                         <div class="project-body">
-                            <section><h2>Physical Representation</h2><p>Adding a two-strand twist at selected positions changes two visible properties of the cord.</p><ul><li><strong>Color pattern:</strong> The strand arrangement and repeating pattern represent 0 and 1.</li><li><strong>Segment length:</strong> Short and long structural segments represent 0 and 1.</li></ul><img class="project-representation-image" src="../images/projects/barcord-encoding.jpg" alt="BarCord diagram comparing color-pattern and segment-length representations of 0 and 1"></section>
+                            <section><h2>Physical Representation</h2>
+                                <div class="physical-representation-layout">
+                                    <img class="project-representation-image" src="../images/projects/barcord-encoding.jpg" alt="BarCord diagram comparing color-pattern and segment-length representations of 0 and 1">
+                                    <div class="representation-copy">
+                                        <p>A two-strand twist changes either the visible color order or the length of a structural segment. The two encodings shown on the left can be used independently.</p>
+                                        <div class="representation-item"><span class="representation-symbol">0/1</span><div><h3>Color pattern</h3><p>The purple strand facing upward represents <code>0</code>; facing downward represents <code>1</code>.</p></div></div>
+                                        <div class="representation-item"><span class="representation-symbol">0/1</span><div><h3>Segment length</h3><p>One knot represents <code>0</code>; two knots represent <code>1</code>.</p></div></div>
+                                    </div>
+                                </div>
+                            </section>
                             <section><h2>Encoding</h2><ol><li>Convert the source information into a binary sequence.</li><li>Braid the selected base cord structure.</li><li>Insert two-strand twists at chosen positions.</li><li>Form the bit sequence through changes in color pattern or structural segment length.</li></ol></section>
                             <section><h2>Decoding</h2><p>In the current prototype, the repeating color pattern or structural segment length is inspected visually and each region is manually interpreted as 0 or 1.</p></section>
                         </div>

@@ -30,8 +30,15 @@
                     <img class="project-hero-image" src="../images/projects/knitted-acoustic-barcode.jpg" alt="Knitted Acoustic Barcode sample with detected acoustic peaks and decoded bits">
                     <div class="project-detail-grid">
                         <div class="project-body">
-                            <section><h2>Physical Representation</h2><p>0 and 1 are represented by changing the spacing between raised regions. Two front-bed rows remain fixed while the number of back-bed rows varies.</p>
-                                <table class="project-mapping"><thead><tr><th>Bit</th><th>Structure</th><th>Interval</th></tr></thead><tbody><tr><td>0</td><td>2 front-bed + 2 back-bed rows</td><td>Short</td></tr><tr><td>1</td><td>2 front-bed + 4 back-bed rows</td><td>Long</td></tr></tbody></table><img class="project-representation-image" src="../images/projects/knitted-encoding.jpg" alt="Knitted Acoustic Barcode diagram showing 0 as two front-bed and two back-bed rows and 1 as two front-bed and four back-bed rows">
+                            <section><h2>Physical Representation</h2>
+                                <div class="physical-representation-layout">
+                                    <img class="project-representation-image" src="../images/projects/knitted-encoding.jpg" alt="Knitted Acoustic Barcode diagram showing 0 as two front-bed and two back-bed rows and 1 as two front-bed and four back-bed rows">
+                                    <div class="representation-copy">
+                                        <p>The spacing between raised regions carries the data. Two front-bed rows stay fixed, while the number of back-bed rows changes the acoustic interval shown in the diagram.</p>
+                                        <div class="representation-item"><span class="representation-symbol">0</span><div><h3>Short interval</h3><p>2 front-bed rows + 2 back-bed rows</p></div></div>
+                                        <div class="representation-item"><span class="representation-symbol">1</span><div><h3>Long interval</h3><p>2 front-bed rows + 4 back-bed rows</p></div></div>
+                                    </div>
+                                </div>
                             </section>
                             <section>
                                 <h2>Encoding Workflow</h2>
